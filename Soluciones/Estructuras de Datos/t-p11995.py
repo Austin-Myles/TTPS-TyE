@@ -1,6 +1,6 @@
 import heapq
 
-# RUNTIME ERROR
+# TIME LIMIT EXCEDED
 
 while True:
     try:
@@ -44,7 +44,7 @@ while True:
         posibilidad = es_prio + es_cola + es_pila
 
         if posibilidad == 0:
-            print("imposible")
+            print("impossible")
         elif posibilidad > 1:
             print("not sure")
         else:
