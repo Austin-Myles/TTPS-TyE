@@ -8,8 +8,8 @@ def sack(elem, lim):
         a = [0] * m
         DP.append(a) 
     
-    for i in range(n):
-        for j in range(m):
+    for i in range(1, n):
+        for j in range(1, m):
             if elem[i-1] > j:
                 DP[i][j] = DP[i-1][j]
             else:
@@ -25,7 +25,7 @@ for _ in range(cases):
     limit = sum(lines) / 2
 
     if(limit.is_integer()): 
-        if((sack(lines,int(limit)) * 2 ) == sum(lines)):
+        if((sack(lines,int(limit))) == int(limit)):
             print("YES")
         else:
             print("NO")
