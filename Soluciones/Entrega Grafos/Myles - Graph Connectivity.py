@@ -32,20 +32,20 @@ def count_components(nodes, edges):
     return component_count
 
 def main():
-    output = []
-    cases = int(sys.stdin.readline())
-    sys.stdin.readline() # For the blank line.
+    output = [] # Generamos un vector output para ir concatenando las respuestas.
+    cases = int(sys.stdin.readline()) # Obtenemos los casos
+    sys.stdin.readline() # Nos saltamos la linea en blanco.
     for _ in range(cases):
-        ln = sys.stdin.readline().strip() # Largest node in the graph.
-        nodos = [chr(i) for i in range(ord('A'), ord(ln) + 1)]
-        aristas = []
+        ln = sys.stdin.readline().strip() # Obtenemos la letra mas grande del grafo y a partir de ella creamos el grafo. 
+        nodos = [chr(i) for i in range(ord('A'), ord(ln) + 1)] # Definimos los nodos de manera ordinal.
+        aristas = [] # Definimos un vector para las aristas.
         while(True):
-            aux = sys.stdin.readline().strip()
+            aux = sys.stdin.readline().strip() # Obtenemos las aristas hasta llegar a un caracter en blanco.
             if aux:
                 aristas.append(aux)
             else:
                 break
-        component_count = count_components(nodos, aristas)
+        component_count = count_components(nodos, aristas) # Obtenemos la cantidad de componentes conexas.
         output.append(str(component_count))
 
     sys.stdout.write("\n\n".join(output) + "\n")
